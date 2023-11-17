@@ -1,17 +1,10 @@
-import { Company, Person } from '~/generated/graphql';
 import { getLogoUrlFromDomainName } from '~/utils';
 import { assertNotNull } from '~/utils/assert';
 
 export const mapFavorites = (
   favorites: any,
-  recordsDict: {
-    [key: string]: {
-      firstName?: Person['firstName'];
-      lastName?: Person['lastName'];
-      avatarUrl?: Person['avatarUrl'];
-      name?: Company['name'];
-      domainName?: Company['domainName'];
-    };
+  records: {
+    [key: string]: any;
   },
 ) => {
   return favorites
@@ -20,19 +13,19 @@ export const mapFavorites = (
         ? {
             id: favorite.person.id,
             labelIdentifier:
-              recordsDict[favorite.person.id].firstName +
+              records[favorite.person.id].firstName +
               ' ' +
-              recordsDict[favorite.person.id].lastName,
-            avatarUrl: recordsDict[favorite.person.id].avatarUrl,
+              records[favorite.person.id].lastName,
+            avatarUrl: records[favorite.person.id].avatarUrl,
             avatarType: 'rounded',
             link: `/object/personV2/${favorite.person.id}`,
           }
         : favorite.company
         ? {
             id: favorite.company.id,
-            labelIdentifier: recordsDict[favorite.company.id].name,
+            labelIdentifier: records[favorite.company.id].name,
             avatarUrl: getLogoUrlFromDomainName(
-              recordsDict[favorite.company.id].domainName ?? '',
+              records[favorite.company.id].domainName ?? '',
             ),
             avatarType: 'squared',
             link: `/object/companyV2/${favorite.company.id}`,
