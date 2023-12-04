@@ -9,8 +9,8 @@ import { useRelationPicker } from '@/ui/input/components/internal/relation-picke
 import { SingleEntitySelect } from '@/ui/input/relation-picker/components/SingleEntitySelect';
 import { relationPickerSearchFilterScopedState } from '@/ui/input/relation-picker/states/relationPickerSearchFilterScopedState';
 import { RelationPickerHotkeyScope } from '@/ui/input/relation-picker/types/RelationPickerHotkeyScope';
-import { NewButton } from '@/ui/object/record-board/components/NewButton';
-import { BoardColumnContext } from '@/ui/object/record-board/contexts/BoardColumnContext';
+import { NewButton } from '@/object-record/record-board/components/NewButton';
+import { BoardColumnContext } from '@/object-record/record-board/contexts/BoardColumnContext';
 import { usePreviousHotkeyScope } from '@/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
 import { useRecoilScopedState } from '@/ui/utilities/recoil-scope/hooks/useRecoilScopedState';
 

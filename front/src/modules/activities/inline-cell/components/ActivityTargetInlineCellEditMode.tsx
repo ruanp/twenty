@@ -9,7 +9,7 @@ import { useObjectMetadataItem } from '@/object-metadata/hooks/useObjectMetadata
 import { useFilteredSearchEntityQuery } from '@/search/hooks/useFilteredSearchEntityQuery';
 import { useRelationPicker } from '@/ui/input/components/internal/relation-picker/hooks/useRelationPicker';
 import { MultipleEntitySelect } from '@/ui/input/relation-picker/components/MultipleEntitySelect';
-import { useInlineCell } from '@/ui/object/record-inline-cell/hooks/useInlineCell';
+import { useInlineCell } from '@/object-record/record-inline-cell/hooks/useInlineCell';
 import { assertNotNull } from '~/utils/assert';
 
 type ActivityTargetInlineCellEditModeProps = {

@@ -3,7 +3,7 @@ import { v4 } from 'uuid';
 
 import { useCreateOneRecord } from '@/object-record/hooks/useCreateOneRecord';
 import { Opportunity } from '@/pipeline/types/Opportunity';
-import { boardCardIdsByColumnIdFamilyState } from '@/ui/object/record-board/states/boardCardIdsByColumnIdFamilyState';
+import { boardCardIdsByColumnIdFamilyState } from '@/object-record/record-board/states/boardCardIdsByColumnIdFamilyState';
 
 export const useCreateOpportunity = () => {
   const { createOneRecord: createOneOpportunity } =

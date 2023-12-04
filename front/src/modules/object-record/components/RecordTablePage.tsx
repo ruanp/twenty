@@ -12,8 +12,8 @@ import { PageBody } from '@/ui/layout/page/PageBody';
 import { PageContainer } from '@/ui/layout/page/PageContainer';
 import { PageHeader } from '@/ui/layout/page/PageHeader';
 import { PageHotkeysEffect } from '@/ui/layout/page/PageHotkeysEffect';
-import { RecordTableActionBar } from '@/ui/object/record-table/action-bar/components/RecordTableActionBar';
-import { RecordTableContextMenu } from '@/ui/object/record-table/context-menu/components/RecordTableContextMenu';
+import { RecordTableActionBar } from '@/object-record/record-table/action-bar/components/RecordTableActionBar';
+import { RecordTableContextMenu } from '@/object-record/record-table/context-menu/components/RecordTableContextMenu';
 
 import { useCreateOneRecord } from '../hooks/useCreateOneRecord';
 

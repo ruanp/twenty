@@ -10,7 +10,7 @@ import { IconTargetArrow } from '@/ui/display/icon';
 import { PageBody } from '@/ui/layout/page/PageBody';
 import { PageContainer } from '@/ui/layout/page/PageContainer';
 import { PageHeader } from '@/ui/layout/page/PageHeader';
-import { BoardOptionsContext } from '@/ui/object/record-board/contexts/BoardOptionsContext';
+import { BoardOptionsContext } from '@/object-record/record-board/contexts/BoardOptionsContext';
 import { RecoilScope } from '@/ui/utilities/recoil-scope/components/RecoilScope';
 import { opportunitiesBoardOptions } from '~/pages/opportunities/opportunitiesBoardOptions';
 

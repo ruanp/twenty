@@ -11,7 +11,7 @@ import {
   signInBackgroundMockSortDefinitions,
 } from '@/sign-in-background-mock/constants/signInBackgroundMockDefinitions';
 import { signInBackgroundMockViewFields } from '@/sign-in-background-mock/constants/signInBackgroundMockViewFields';
-import { useRecordTable } from '@/ui/object/record-table/hooks/useRecordTable';
+import { useRecordTable } from '@/object-record/record-table/hooks/useRecordTable';
 import { useViewBar } from '@/views/hooks/useViewBar';
 import { ViewType } from '@/views/types/ViewType';
 import { mapViewFieldsToColumnDefinitions } from '@/views/utils/mapViewFieldsToColumnDefinitions';

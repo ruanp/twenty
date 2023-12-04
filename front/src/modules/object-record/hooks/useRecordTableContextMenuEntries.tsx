@@ -9,10 +9,10 @@ import { IconHeart, IconHeartOff, IconTrash } from '@/ui/display/icon';
 import { actionBarEntriesState } from '@/ui/navigation/action-bar/states/actionBarEntriesState';
 import { contextMenuEntriesState } from '@/ui/navigation/context-menu/states/contextMenuEntriesState';
 import { ContextMenuEntry } from '@/ui/navigation/context-menu/types/ContextMenuEntry';
-import { useRecordTable } from '@/ui/object/record-table/hooks/useRecordTable';
-import { RecordTableScopeInternalContext } from '@/ui/object/record-table/scopes/scope-internal-context/RecordTableScopeInternalContext';
-import { selectedRowIdsSelector } from '@/ui/object/record-table/states/selectors/selectedRowIdsSelector';
-import { tableRowIdsState } from '@/ui/object/record-table/states/tableRowIdsState';
+import { useRecordTable } from '@/object-record/record-table/hooks/useRecordTable';
+import { RecordTableScopeInternalContext } from '@/object-record/record-table/scopes/scope-internal-context/RecordTableScopeInternalContext';
+import { selectedRowIdsSelector } from '@/object-record/record-table/states/selectors/selectedRowIdsSelector';
+import { tableRowIdsState } from '@/object-record/record-table/states/tableRowIdsState';
 import { useAvailableScopeIdOrThrow } from '@/ui/utilities/recoil-scope/scopes-internal/hooks/useAvailableScopeId';
 
 type useRecordTableContextMenuEntriesProps = {

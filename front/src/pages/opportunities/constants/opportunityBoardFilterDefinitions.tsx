@@ -1,5 +1,5 @@
 import { Opportunity } from '@/pipeline/types/Opportunity';
-import { FilterDefinitionByEntity } from '@/ui/object/object-filter-dropdown/types/FilterDefinitionByEntity';
+import { FilterDefinitionByEntity } from '@/object-record/object-filter-dropdown/types/FilterDefinitionByEntity';
 
 export const opportunityBoardFilterDefinitions: FilterDefinitionByEntity<Opportunity>[] =
   [

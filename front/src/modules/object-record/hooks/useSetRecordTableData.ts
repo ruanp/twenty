@@ -1,10 +1,10 @@
 import { useRecoilCallback } from 'recoil';
 
-import { entityFieldsFamilyState } from '@/ui/object/field/states/entityFieldsFamilyState';
-import { useRecordTable } from '@/ui/object/record-table/hooks/useRecordTable';
-import { isFetchingRecordTableDataState } from '@/ui/object/record-table/states/isFetchingRecordTableDataState';
-import { numberOfTableRowsState } from '@/ui/object/record-table/states/numberOfTableRowsState';
-import { tableRowIdsState } from '@/ui/object/record-table/states/tableRowIdsState';
+import { entityFieldsFamilyState } from '@/object-record/field/states/entityFieldsFamilyState';
+import { useRecordTable } from '@/object-record/record-table/hooks/useRecordTable';
+import { isFetchingRecordTableDataState } from '@/object-record/record-table/states/isFetchingRecordTableDataState';
+import { numberOfTableRowsState } from '@/object-record/record-table/states/numberOfTableRowsState';
+import { tableRowIdsState } from '@/object-record/record-table/states/tableRowIdsState';
 import { useViewBar } from '@/views/hooks/useViewBar';
 
 export const useSetRecordTableData = () => {
