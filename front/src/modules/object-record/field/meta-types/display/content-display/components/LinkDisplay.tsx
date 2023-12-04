@@ -1,12 +1,12 @@
 import { MouseEvent } from 'react';
 import styled from '@emotion/styled';
 
+import { FieldLinkValue } from '@/object-record/field/types/FieldMetadata';
 import { RoundedLink } from '@/ui/navigation/link/components/RoundedLink';
 import {
   LinkType,
   SocialLink,
 } from '@/ui/navigation/link/components/SocialLink';
-import { FieldLinkValue } from '@/object-record/field/types/FieldMetadata';
 
 import { EllipsisDisplay } from './EllipsisDisplay';
 

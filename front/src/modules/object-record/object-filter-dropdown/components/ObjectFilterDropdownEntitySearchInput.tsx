@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'react';
 
-import { DropdownMenuSearchInput } from '@/ui/layout/dropdown/components/DropdownMenuSearchInput';
 import { useFilterDropdown } from '@/object-record/object-filter-dropdown/hooks/useFilterDropdown';
+import { DropdownMenuSearchInput } from '@/ui/layout/dropdown/components/DropdownMenuSearchInput';
 
 export const ObjectFilterDropdownEntitySearchInput = () => {
   const {

@@ -34,7 +34,7 @@ const ComponentDecorator: Decorator = (Story) => (
 export default meta;
 type Story = StoryObj<typeof NavItem>;
 
-export const Default: Story = { 
+export const Default: Story = {
   decorators: [ComponentDecorator, ComponentWithRouterDecorator],
 };
 
@@ -91,10 +91,10 @@ export const WithCount: Story = {
 export const WithKeyboardKeys: Story = {
   ...Default,
   args: {
-    className: "hover",
+    className: 'hover',
     keyboard: ['⌘', 'K'],
   },
   parameters: {
-    pseudo: { hover: [".hover"] },
-  }
+    pseudo: { hover: ['.hover'] },
+  },
 };

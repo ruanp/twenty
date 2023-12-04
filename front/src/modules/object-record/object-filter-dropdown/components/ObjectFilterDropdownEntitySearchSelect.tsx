@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
+import { useFilterDropdown } from '@/object-record/object-filter-dropdown/hooks/useFilterDropdown';
 import { EntitiesForMultipleEntitySelect } from '@/ui/input/relation-picker/components/MultipleEntitySelect';
 import { SingleEntitySelectBase } from '@/ui/input/relation-picker/components/SingleEntitySelectBase';
 import { EntityForSelect } from '@/ui/input/relation-picker/types/EntityForSelect';
 import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
-import { useFilterDropdown } from '@/object-record/object-filter-dropdown/hooks/useFilterDropdown';
 import { ViewFilterOperand } from '@/views/types/ViewFilterOperand';
 
 export const ObjectFilterDropdownEntitySearchSelect = ({

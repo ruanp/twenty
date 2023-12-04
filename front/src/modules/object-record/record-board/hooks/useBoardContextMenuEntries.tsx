@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import { useSetRecoilState } from 'recoil';
 
+import { useDeleteSelectedBoardCards } from '@/object-record/record-board/hooks/useDeleteSelectedBoardCards';
 import { IconTrash } from '@/ui/display/icon';
 import { contextMenuEntriesState } from '@/ui/navigation/context-menu/states/contextMenuEntriesState';
-import { useDeleteSelectedBoardCards } from '@/object-record/record-board/hooks/useDeleteSelectedBoardCards';
 
 export const useBoardContextMenuEntries = () => {
   const setContextMenuEntriesRecoil = useSetRecoilState(

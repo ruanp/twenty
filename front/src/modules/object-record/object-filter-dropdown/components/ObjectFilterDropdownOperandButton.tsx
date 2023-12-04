@@ -1,6 +1,6 @@
+import { useFilterDropdown } from '@/object-record/object-filter-dropdown/hooks/useFilterDropdown';
 import { IconChevronDown } from '@/ui/display/icon';
 import { DropdownMenuHeader } from '@/ui/layout/dropdown/components/DropdownMenuHeader';
-import { useFilterDropdown } from '@/object-record/object-filter-dropdown/hooks/useFilterDropdown';
 
 import { getOperandLabel } from '../utils/getOperandLabel';
 

@@ -1,5 +1,5 @@
-import { InternalDatePicker } from '@/ui/input/components/internal/date/components/InternalDatePicker';
 import { useFilterDropdown } from '@/object-record/object-filter-dropdown/hooks/useFilterDropdown';
+import { InternalDatePicker } from '@/ui/input/components/internal/date/components/InternalDatePicker';
 
 export const ObjectFilterDropdownDateSearchInput = () => {
   const {

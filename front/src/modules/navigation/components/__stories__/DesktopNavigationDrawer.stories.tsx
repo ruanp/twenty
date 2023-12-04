@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 
+import { ComponentDecorator } from '~/testing/decorators/ComponentDecorator';
 import { ComponentWithRouterDecorator } from '~/testing/decorators/ComponentWithRouterDecorator';
+import { SnackBarDecorator } from '~/testing/decorators/SnackBarDecorator';
 
 import { DesktopNavigationDrawer } from '../DesktopNavigationDrawer';
-import { ComponentDecorator } from '~/testing/decorators/ComponentDecorator';
-import { SnackBarDecorator } from '~/testing/decorators/SnackBarDecorator';
 
 const meta: Meta<typeof DesktopNavigationDrawer> = {
   title: 'Modules/Navigation/DesktopNavigationDrawer',

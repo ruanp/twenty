@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 
+import { isFieldRelation } from '@/object-record/field/types/guards/isFieldRelation';
 import { IconPencil } from '@/ui/display/icon';
 import { IconComponent } from '@/ui/display/icon/types/IconComponent';
-import { isFieldRelation } from '@/object-record/field/types/guards/isFieldRelation';
 
 import { FieldContext } from '../contexts/FieldContext';
 import { isFieldEmail } from '../types/guards/isFieldEmail';

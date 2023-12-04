@@ -2,13 +2,13 @@ import { useCallback, useState } from 'react';
 import styled from '@emotion/styled';
 import { useRecoilCallback, useRecoilState, useRecoilValue } from 'recoil';
 
-import { IconPlus } from '@/ui/display/icon';
-import { LightIconButton } from '@/ui/input/button/components/LightIconButton';
 import { FieldMetadata } from '@/object-record/field/types/FieldMetadata';
 import { useRecordTableScopedStates } from '@/object-record/record-table/hooks/internal/useRecordTableScopedStates';
 import { useTableColumns } from '@/object-record/record-table/hooks/useTableColumns';
 import { resizeFieldOffsetState } from '@/object-record/record-table/states/resizeFieldOffsetState';
 import { ColumnDefinition } from '@/object-record/record-table/types/ColumnDefinition';
+import { IconPlus } from '@/ui/display/icon';
+import { LightIconButton } from '@/ui/input/button/components/LightIconButton';
 import { useTrackPointer } from '@/ui/utilities/pointer-event/hooks/useTrackPointer';
 
 import { ColumnHeadWithDropdown } from './ColumnHeadWithDropdown';

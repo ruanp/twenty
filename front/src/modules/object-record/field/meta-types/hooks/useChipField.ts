@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { useRecoilValue } from 'recoil';
 
-import { useRelationPicker } from '@/ui/input/components/internal/relation-picker/hooks/useRelationPicker';
 import { entityFieldsFamilyState } from '@/object-record/field/states/entityFieldsFamilyState';
 import { isFieldFullName } from '@/object-record/field/types/guards/isFieldFullName';
 import { isFieldText } from '@/object-record/field/types/guards/isFieldText';
+import { useRelationPicker } from '@/ui/input/components/internal/relation-picker/hooks/useRelationPicker';
 
 import { FieldContext } from '../../contexts/FieldContext';
 

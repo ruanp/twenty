@@ -2,10 +2,10 @@ import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRecoilValue } from 'recoil';
 
+import { RecordTableHeaderCell } from '@/object-record/record-table/components/RecordTableHeaderCell';
 import { IconPlus } from '@/ui/display/icon';
 import { Dropdown } from '@/ui/layout/dropdown/components/Dropdown';
 import { DropdownScope } from '@/ui/layout/dropdown/scopes/DropdownScope';
-import { RecordTableHeaderCell } from '@/object-record/record-table/components/RecordTableHeaderCell';
 
 import { useRecordTableScopedStates } from '../hooks/internal/useRecordTableScopedStates';
 

@@ -1,13 +1,13 @@
 import { useRecoilCallback } from 'recoil';
 
-import { currentPipelineStepsState } from '@/pipeline/states/currentPipelineStepsState';
-import { Opportunity } from '@/pipeline/types/Opportunity';
-import { PipelineStep } from '@/pipeline/types/PipelineStep';
 import { entityFieldsFamilyState } from '@/object-record/field/states/entityFieldsFamilyState';
 import { boardCardIdsByColumnIdFamilyState } from '@/object-record/record-board/states/boardCardIdsByColumnIdFamilyState';
 import { boardColumnsState } from '@/object-record/record-board/states/boardColumnsState';
 import { savedBoardColumnsState } from '@/object-record/record-board/states/savedBoardColumnsState';
 import { BoardColumnDefinition } from '@/object-record/record-board/types/BoardColumnDefinition';
+import { currentPipelineStepsState } from '@/pipeline/states/currentPipelineStepsState';
+import { Opportunity } from '@/pipeline/types/Opportunity';
+import { PipelineStep } from '@/pipeline/types/PipelineStep';
 import { themeColorSchema } from '@/ui/theme/utils/themeColorSchema';
 import { isDeeplyEqual } from '~/utils/isDeeplyEqual';
 import { logError } from '~/utils/logError';

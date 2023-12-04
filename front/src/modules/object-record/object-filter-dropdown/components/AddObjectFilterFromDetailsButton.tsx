@@ -1,7 +1,7 @@
+import { useFilterDropdown } from '@/object-record/object-filter-dropdown/hooks/useFilterDropdown';
 import { IconPlus } from '@/ui/display/icon';
 import { LightButton } from '@/ui/input/button/components/LightButton';
 import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
-import { useFilterDropdown } from '@/object-record/object-filter-dropdown/hooks/useFilterDropdown';
 
 import { ObjectFilterDropdownId } from '../constants/ObjectFilterDropdownId';
 

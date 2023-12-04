@@ -7,9 +7,9 @@ import { useSetHotkeyScope } from '@/ui/utilities/hotkey/hooks/useSetHotkeyScope
 import { FieldMetadataType } from '~/generated-metadata/graphql';
 
 import { FieldContextProvider } from '../../../../components/FieldContextProvider';
+import { FieldRatingValue } from '../../../../types/FieldMetadata';
 import { useRatingField } from '../../../hooks/useRatingField';
 import { RatingFieldInput, RatingFieldInputProps } from '../RatingFieldInput';
-import { FieldRatingValue } from '../../../../types/FieldMetadata';
 
 const RatingFieldValueSetterEffect = ({
   value,

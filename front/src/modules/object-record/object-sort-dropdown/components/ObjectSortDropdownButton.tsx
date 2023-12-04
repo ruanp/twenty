@@ -1,5 +1,7 @@
 import { useCallback, useState } from 'react';
 
+import { useSortDropdown } from '@/object-record/object-sort-dropdown/hooks/useSortDropdown';
+import { ObjectSortDropdownScope } from '@/object-record/object-sort-dropdown/scopes/ObjectSortDropdownScope';
 import { IconChevronDown } from '@/ui/display/icon';
 import { LightButton } from '@/ui/input/button/components/LightButton';
 import { useLazyLoadIcons } from '@/ui/input/hooks/useLazyLoadIcons';
@@ -10,8 +12,6 @@ import { DropdownMenuSeparator } from '@/ui/layout/dropdown/components/DropdownM
 import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
 import { DropdownScope } from '@/ui/layout/dropdown/scopes/DropdownScope';
 import { MenuItem } from '@/ui/navigation/menu-item/components/MenuItem';
-import { useSortDropdown } from '@/object-record/object-sort-dropdown/hooks/useSortDropdown';
-import { ObjectSortDropdownScope } from '@/object-record/object-sort-dropdown/scopes/ObjectSortDropdownScope';
 import { HotkeyScope } from '@/ui/utilities/hotkey/types/HotkeyScope';
 
 import { ObjectSortDropdownId } from '../constants/ObjectSortDropdownId';

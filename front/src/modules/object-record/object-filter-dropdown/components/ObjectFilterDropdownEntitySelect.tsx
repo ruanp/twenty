@@ -1,10 +1,10 @@
 import { useQuery } from '@apollo/client';
 
 import { useObjectMetadataItem } from '@/object-metadata/hooks/useObjectMetadataItem';
-import { useFilteredSearchEntityQuery } from '@/search/hooks/useFilteredSearchEntityQuery';
-import { useRelationPicker } from '@/ui/input/components/internal/relation-picker/hooks/useRelationPicker';
 import { ObjectFilterDropdownEntitySearchSelect } from '@/object-record/object-filter-dropdown/components/ObjectFilterDropdownEntitySearchSelect';
 import { useFilterDropdown } from '@/object-record/object-filter-dropdown/hooks/useFilterDropdown';
+import { useFilteredSearchEntityQuery } from '@/search/hooks/useFilteredSearchEntityQuery';
+import { useRelationPicker } from '@/ui/input/components/internal/relation-picker/hooks/useRelationPicker';
 
 export const ObjectFilterDropdownEntitySelect = () => {
   const {

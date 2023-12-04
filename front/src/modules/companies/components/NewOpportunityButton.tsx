@@ -3,14 +3,14 @@ import { useQuery } from '@apollo/client';
 
 import { useCreateOpportunity } from '@/companies/hooks/useCreateOpportunity';
 import { useObjectMetadataItem } from '@/object-metadata/hooks/useObjectMetadataItem';
+import { NewButton } from '@/object-record/record-board/components/NewButton';
+import { BoardColumnContext } from '@/object-record/record-board/contexts/BoardColumnContext';
 import { useFilteredSearchEntityQuery } from '@/search/hooks/useFilteredSearchEntityQuery';
 import { useSnackBar } from '@/ui/feedback/snack-bar-manager/hooks/useSnackBar';
 import { useRelationPicker } from '@/ui/input/components/internal/relation-picker/hooks/useRelationPicker';
 import { SingleEntitySelect } from '@/ui/input/relation-picker/components/SingleEntitySelect';
 import { relationPickerSearchFilterScopedState } from '@/ui/input/relation-picker/states/relationPickerSearchFilterScopedState';
 import { RelationPickerHotkeyScope } from '@/ui/input/relation-picker/types/RelationPickerHotkeyScope';
-import { NewButton } from '@/object-record/record-board/components/NewButton';
-import { BoardColumnContext } from '@/object-record/record-board/contexts/BoardColumnContext';
 import { usePreviousHotkeyScope } from '@/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
 import { useRecoilScopedState } from '@/ui/utilities/recoil-scope/hooks/useRecoilScopedState';
 

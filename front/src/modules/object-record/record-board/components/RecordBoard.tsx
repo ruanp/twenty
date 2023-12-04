@@ -4,12 +4,12 @@ import { DragDropContext, OnDragEndResponder } from '@hello-pangea/dnd'; // Atla
 import { useRecoilValue } from 'recoil';
 
 import { useUpdateOneRecord } from '@/object-record/hooks/useUpdateOneRecord';
-import { Opportunity } from '@/pipeline/types/Opportunity';
-import { PageHotkeyScope } from '@/types/PageHotkeyScope';
 import { BoardColumnContext } from '@/object-record/record-board/contexts/BoardColumnContext';
 import { useSetCardSelected } from '@/object-record/record-board/hooks/useSetCardSelected';
 import { useUpdateBoardCardIds } from '@/object-record/record-board/hooks/useUpdateBoardCardIds';
 import { boardColumnsState } from '@/object-record/record-board/states/boardColumnsState';
+import { Opportunity } from '@/pipeline/types/Opportunity';
+import { PageHotkeyScope } from '@/types/PageHotkeyScope';
 import { DragSelect } from '@/ui/utilities/drag-select/components/DragSelect';
 import { useScopedHotkeys } from '@/ui/utilities/hotkey/hooks/useScopedHotkeys';
 import { useListenClickOutsideByClassName } from '@/ui/utilities/pointer-event/hooks/useListenClickOutside';

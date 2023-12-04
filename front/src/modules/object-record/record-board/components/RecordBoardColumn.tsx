@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 import { Draggable, Droppable, DroppableProvided } from '@hello-pangea/dnd';
 import { useRecoilValue } from 'recoil';
 
+import { RecordBoardCard } from '@/object-record/record-board/components/RecordBoardCard';
+import { BoardCardIdContext } from '@/object-record/record-board/contexts/BoardCardIdContext';
 import { IconDotsVertical } from '@/ui/display/icon';
 import { Tag } from '@/ui/display/tag/components/Tag';
 import { LightIconButton } from '@/ui/input/button/components/LightIconButton';
-import { RecordBoardCard } from '@/object-record/record-board/components/RecordBoardCard';
-import { BoardCardIdContext } from '@/object-record/record-board/contexts/BoardCardIdContext';
 import { usePreviousHotkeyScope } from '@/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
 import { RecoilScope } from '@/ui/utilities/recoil-scope/components/RecoilScope';
 

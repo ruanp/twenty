@@ -2,12 +2,8 @@ import { ReactNode, useContext } from 'react';
 import styled from '@emotion/styled';
 import { useRecoilState } from 'recoil';
 
-import { useUpdateOneRecord } from '@/object-record/hooks/useUpdateOneRecord';
-import { EntityChipVariant } from '@/ui/display/chip/components/EntityChip';
-import { IconEye } from '@/ui/display/icon/index';
-import { LightIconButton } from '@/ui/input/button/components/LightIconButton';
-import { Checkbox, CheckboxVariant } from '@/ui/input/components/Checkbox';
 import { FieldContext } from '@/object-record/field/contexts/FieldContext';
+import { useUpdateOneRecord } from '@/object-record/hooks/useUpdateOneRecord';
 import { BoardCardIdContext } from '@/object-record/record-board/contexts/BoardCardIdContext';
 import { useBoardContext } from '@/object-record/record-board/hooks/useBoardContext';
 import { useCurrentCardSelected } from '@/object-record/record-board/hooks/useCurrentCardSelected';
@@ -16,6 +12,10 @@ import { isCompactViewEnabledState } from '@/object-record/record-board/states/i
 import { visibleBoardCardFieldsScopedSelector } from '@/object-record/record-board/states/selectors/visibleBoardCardFieldsScopedSelector';
 import { RecordInlineCell } from '@/object-record/record-inline-cell/components/RecordInlineCell';
 import { InlineCellHotkeyScope } from '@/object-record/record-inline-cell/types/InlineCellHotkeyScope';
+import { EntityChipVariant } from '@/ui/display/chip/components/EntityChip';
+import { IconEye } from '@/ui/display/icon/index';
+import { LightIconButton } from '@/ui/input/button/components/LightIconButton';
+import { Checkbox, CheckboxVariant } from '@/ui/input/components/Checkbox';
 import { AnimatedEaseInOut } from '@/ui/utilities/animation/components/AnimatedEaseInOut';
 import { useRecoilScopedValue } from '@/ui/utilities/recoil-scope/hooks/useRecoilScopedValue';
 import { getLogoUrlFromDomainName } from '~/utils';

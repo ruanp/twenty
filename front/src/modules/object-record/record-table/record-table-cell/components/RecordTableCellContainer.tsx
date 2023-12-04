@@ -1,11 +1,11 @@
 import { ReactElement, useContext, useState } from 'react';
 import styled from '@emotion/styled';
 
-import { IconArrowUpRight } from '@/ui/display/icon';
 import { useGetButtonIcon } from '@/object-record/field/hooks/useGetButtonIcon';
 import { useIsFieldEmpty } from '@/object-record/field/hooks/useIsFieldEmpty';
 import { useIsFieldInputOnly } from '@/object-record/field/hooks/useIsFieldInputOnly';
 import { useGetIsSomeCellInEditMode } from '@/object-record/record-table/hooks/internal/useGetIsSomeCellInEditMode';
+import { IconArrowUpRight } from '@/ui/display/icon';
 import { HotkeyScope } from '@/ui/utilities/hotkey/types/HotkeyScope';
 
 import { CellHotkeyScopeContext } from '../../contexts/CellHotkeyScopeContext';

@@ -3,10 +3,10 @@ import { ActivityTargetInlineCellEditMode } from '@/activities/inline-cell/compo
 import { ActivityTarget } from '@/activities/types/ActivityTarget';
 import { GraphQLActivity } from '@/activities/types/GraphQLActivity';
 import { useFindManyRecords } from '@/object-record/hooks/useFindManyRecords';
-import { IconArrowUpRight, IconPencil } from '@/ui/display/icon';
-import { RelationPickerHotkeyScope } from '@/ui/input/relation-picker/types/RelationPickerHotkeyScope';
 import { RecordInlineCellContainer } from '@/object-record/record-inline-cell/components/RecordInlineCellContainer';
 import { FieldRecoilScopeContext } from '@/object-record/record-inline-cell/states/recoil-scope-contexts/FieldRecoilScopeContext';
+import { IconArrowUpRight, IconPencil } from '@/ui/display/icon';
+import { RelationPickerHotkeyScope } from '@/ui/input/relation-picker/types/RelationPickerHotkeyScope';
 import { RecoilScope } from '@/ui/utilities/recoil-scope/components/RecoilScope';
 
 type ActivityTargetsInlineCellProps = {

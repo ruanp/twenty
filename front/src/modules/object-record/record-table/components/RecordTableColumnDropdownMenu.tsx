@@ -1,8 +1,8 @@
+import { FieldMetadata } from '@/object-record/field/types/FieldMetadata';
 import { IconArrowLeft, IconArrowRight, IconEyeOff } from '@/ui/display/icon';
 import { DropdownMenuItemsContainer } from '@/ui/layout/dropdown/components/DropdownMenuItemsContainer';
 import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
 import { MenuItem } from '@/ui/navigation/menu-item/components/MenuItem';
-import { FieldMetadata } from '@/object-record/field/types/FieldMetadata';
 
 import { useTableColumns } from '../hooks/useTableColumns';
 import { ColumnDefinition } from '../types/ColumnDefinition';

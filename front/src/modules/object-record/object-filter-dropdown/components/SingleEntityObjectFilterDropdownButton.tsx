@@ -1,11 +1,11 @@
 import React from 'react';
 import { useTheme } from '@emotion/react';
 
+import { useFilterDropdown } from '@/object-record/object-filter-dropdown/hooks/useFilterDropdown';
 import { IconChevronDown } from '@/ui/display/icon/index';
 import { Dropdown } from '@/ui/layout/dropdown/components/Dropdown';
 import { StyledHeaderDropdownButton } from '@/ui/layout/dropdown/components/StyledHeaderDropdownButton';
 import { DropdownScope } from '@/ui/layout/dropdown/scopes/DropdownScope';
-import { useFilterDropdown } from '@/object-record/object-filter-dropdown/hooks/useFilterDropdown';
 import { HotkeyScope } from '@/ui/utilities/hotkey/types/HotkeyScope';
 import { ViewFilterOperand } from '@/views/types/ViewFilterOperand';
 

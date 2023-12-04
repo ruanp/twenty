@@ -1,8 +1,8 @@
 import { useRecoilCallback } from 'recoil';
 
-import { Opportunity } from '@/pipeline/types/Opportunity';
 import { boardCardIdsByColumnIdFamilyState } from '@/object-record/record-board/states/boardCardIdsByColumnIdFamilyState';
 import { boardColumnsState } from '@/object-record/record-board/states/boardColumnsState';
+import { Opportunity } from '@/pipeline/types/Opportunity';
 
 export const useUpdateCompanyBoardCardIds = () =>
   useRecoilCallback(

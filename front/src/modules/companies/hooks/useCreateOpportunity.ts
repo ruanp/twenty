@@ -2,8 +2,8 @@ import { useRecoilCallback } from 'recoil';
 import { v4 } from 'uuid';
 
 import { useCreateOneRecord } from '@/object-record/hooks/useCreateOneRecord';
-import { Opportunity } from '@/pipeline/types/Opportunity';
 import { boardCardIdsByColumnIdFamilyState } from '@/object-record/record-board/states/boardCardIdsByColumnIdFamilyState';
+import { Opportunity } from '@/pipeline/types/Opportunity';
 
 export const useCreateOpportunity = () => {
   const { createOneRecord: createOneOpportunity } =

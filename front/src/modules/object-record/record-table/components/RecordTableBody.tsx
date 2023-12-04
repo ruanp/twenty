@@ -4,7 +4,6 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { useObjectMetadataItem } from '@/object-metadata/hooks/useObjectMetadataItem';
 import { useObjectNameSingularFromPlural } from '@/object-metadata/hooks/useObjectNameSingularFromPlural';
-import { isFetchingMoreRecordsFamilyState } from '@/object-record/states/isFetchingMoreRecordsFamilyState';
 import {
   RecordTableRow,
   StyledRow,
@@ -13,6 +12,7 @@ import { RowIdContext } from '@/object-record/record-table/contexts/RowIdContext
 import { RowIndexContext } from '@/object-record/record-table/contexts/RowIndexContext';
 import { useRecordTableScopedStates } from '@/object-record/record-table/hooks/internal/useRecordTableScopedStates';
 import { isFetchingRecordTableDataState } from '@/object-record/record-table/states/isFetchingRecordTableDataState';
+import { isFetchingMoreRecordsFamilyState } from '@/object-record/states/isFetchingMoreRecordsFamilyState';
 
 import { useRecordTable } from '../hooks/useRecordTable';
 import { tableRowIdsState } from '../states/tableRowIdsState';

@@ -1,5 +1,5 @@
-import { EntityChip } from '@/ui/display/chip/components/EntityChip';
 import { useChipField } from '@/object-record/field/meta-types/hooks/useChipField';
+import { EntityChip } from '@/ui/display/chip/components/EntityChip';
 
 export const ChipFieldDisplay = () => {
   const {
