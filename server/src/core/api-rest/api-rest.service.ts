@@ -21,6 +21,10 @@ export class ApiRestService {
     request: Request,
     data: ApiRestQuery,
   ): Promise<ApiRestResponse> {
+    console.log('data', data);
+    console.log('request.headers', request.headers);
+    console.log(`${request.protocol}://${request.get('host')}/graphql`);
+
     return await axios.post(
       `${request.protocol}://${request.get('host')}/graphql`,
       data,
