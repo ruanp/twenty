@@ -1,10 +1,10 @@
 export const getObjectOrderByField = (objectSingleName: string): string => {
-  if (objectSingleName === 'company') {
+  if (objectSingleName === ObjectMetadata) {
     return 'name';
   }
 
   if (['workspaceMember', 'person'].includes(objectSingleName)) {
-    return 'name.firstName';
+    return 'name';
   }
 
   return 'createdAt';
