@@ -86,7 +86,10 @@ export const SingleEntitySelectBase = <
     [onCancel],
   );
 
-  const selectableItemIds = entitiesInDropdown.map((entity) => entity.id);
+  const selectableEntityIds = entitiesInDropdown.map((entity) => entity.id);
+  const { selectedItemId } = useSelectableList({
+    selectableListId: 'single-entity-select-base-list',
+  });
 
   return (
     <div ref={containerRef}>
@@ -120,7 +123,7 @@ export const SingleEntitySelectBase = <
             {entitiesInDropdown?.map((entity) => (
               <SelectableList
                 selectableListId="single-entity-select-base-list"
-                selectableItemIds={[selectableItemIds]}
+                selectableItemIds={[selectableEntityIds]}
                 hotkeyScope={RelationPickerHotkeyScope.RelationPicker}
                 onEnter={(_itemId) => {
                   if (
@@ -143,12 +146,7 @@ export const SingleEntitySelectBase = <
                     onClick={() => onEntitySelected(entity)}
                     text={entity.name}
                     selected={selectedEntity?.id === entity.id}
-                    hovered={
-                      useSelectableList({
-                        selectableListId: 'single-entity-select-base-list',
-                        itemId: entity.id,
-                      }).isSelectedItemId
-                    }
+                    hovered={selectedItemId === entity.id}
                     avatar={
                       <Avatar
                         avatarUrl={entity.avatarUrl}

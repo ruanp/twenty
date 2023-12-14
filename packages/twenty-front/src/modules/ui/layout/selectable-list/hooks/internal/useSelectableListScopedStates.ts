@@ -4,13 +4,12 @@ import { useAvailableScopeIdOrThrow } from '@/ui/utilities/recoil-scope/scopes-i
 
 type UseSelectableListScopedStatesProps = {
   selectableListScopeId?: string;
-  itemId?: string;
 };
 
 export const useSelectableListScopedStates = (
   args?: UseSelectableListScopedStatesProps,
 ) => {
-  const { selectableListScopeId, itemId } = args ?? {};
+  const { selectableListScopeId } = args ?? {};
   const scopeId = useAvailableScopeIdOrThrow(
     SelectableListScopeInternalContext,
     selectableListScopeId,
@@ -19,16 +18,13 @@ export const useSelectableListScopedStates = (
   const {
     selectedItemIdState,
     selectableItemIdsState,
-    isSelectedItemIdSelector,
     selectableListOnEnterState,
   } = getSelectableListScopedStates({
     selectableListScopeId: scopeId,
-    itemId: itemId,
   });
 
   return {
     scopeId,
-    isSelectedItemIdSelector,
     selectableItemIdsState,
     selectedItemIdState,
     selectableListOnEnterState,
