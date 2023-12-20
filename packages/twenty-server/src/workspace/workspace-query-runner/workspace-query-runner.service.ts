@@ -1,4 +1,9 @@
-import { BadRequestException, Injectable, Logger } from '@nestjs/common';
+import {
+  BadRequestException,
+  Inject,
+  Injectable,
+  Logger,
+} from '@nestjs/common';
 
 import { IConnection } from 'src/utils/pagination/interfaces/connection.interface';
 import {
@@ -20,6 +25,13 @@ import {
 import { WorkspaceQueryBuilderFactory } from 'src/workspace/workspace-query-builder/workspace-query-builder.factory';
 import { parseResult } from 'src/workspace/workspace-query-runner/utils/parse-result.util';
 import { WorkspaceDataSourceService } from 'src/workspace/workspace-datasource/workspace-datasource.service';
+import { MessageQueueService } from 'src/integrations/message-queue/services/message-queue.service';
+import { MessageQueue } from 'src/integrations/message-queue/message-queue.constants';
+import {
+  CallWebhookJob,
+  CallWebhookJobData,
+  WebhookOperation,
+} from 'src/workspace/workspace-query-runner/jobs/call-webhook.job';
 
 import { WorkspaceQueryRunnerOptions } from './interfaces/query-runner-optionts.interface';
 import {
@@ -34,6 +46,8 @@ export class WorkspaceQueryRunnerService {
   constructor(
     private readonly workspaceQueryBuilderFactory: WorkspaceQueryBuilderFactory,
     private readonly workspaceDataSourceService: WorkspaceDataSourceService,
+    @Inject(MessageQueue.webhookQueue)
+    private readonly messageQueueService: MessageQueueService,
   ) {}
 
   async findMany<
@@ -102,8 +116,20 @@ export class WorkspaceQueryRunnerService {
     options: WorkspaceQueryRunnerOptions,
   ): Promise<Record | undefined> {
     const records = await this.createMany({ data: [args.data] }, options);
+    const result = records?.[0];
 
-    return records?.[0];
+    await this.messageQueueService.add<CallWebhookJobData>(
+      CallWebhookJob.name,
+      {
+        recordData: result,
+        workspaceId: options.workspaceId,
+        operation: WebhookOperation.create,
+        objectNameSingular: options.targetTableName,
+      },
+      { retryLimit: 2 },
+    );
+
+    return result;
   }
 
   async updateOne<Record extends IRecord = IRecord>(
