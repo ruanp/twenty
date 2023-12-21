@@ -1,6 +1,7 @@
-import { createAppTester } from "zapier-platform-core";
+import { createAppTester, tools } from "zapier-platform-core";
 import getBundle from '../../utils/getBundle';
 import App from '../../index';
+tools.env.inject();
 
 const appTester = createAppTester(App);
 describe('triggers.find_objects', () => {

@@ -3,7 +3,7 @@ import getBundle from "../../utils/getBundle";
 import { Bundle, createAppTester, tools, ZObject } from "zapier-platform-core";
 import requestDb from "../../utils/requestDb";
 const appTester = createAppTester(App);
-tools.env.inject;
+tools.env.inject();
 
 describe('creates.create_record', () => {
   test('should run to create a Company Record', async () => {

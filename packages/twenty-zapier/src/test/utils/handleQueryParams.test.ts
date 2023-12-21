@@ -7,7 +7,7 @@ describe('utils.handleQueryParams', () => {
     const expectedResult = '';
     expect(result).toEqual(expectedResult);
   });
-  test('should format', async () => {
+  test('should format', () => {
     const inputData = {
       name: 'Company Name',
       address: 'Company Address',
