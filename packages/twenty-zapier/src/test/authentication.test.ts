@@ -1,7 +1,6 @@
 import App from '../index';
 import {
   Bundle,
-  HttpRequestOptions,
   createAppTester,
   tools,
   ZObject,
@@ -43,12 +42,13 @@ describe('custom auth', () => {
   });
 
   it('fails on bad auth token format', async () => {
-    const bundle = { authData: { apiKey: 'bad' } };
+    const bundle = getBundle();
+    bundle.authData.apiKey = 'bad';
 
     try {
       await appTester(App.authentication.test, bundle);
     } catch (error: any) {
-      expect(error.message).toContain('UNAUTHENTICATED');
+      expect(error.message).toContain('Unauthorized');
       return;
     }
     throw new Error('appTester should have thrown');
@@ -66,14 +66,13 @@ describe('custom auth', () => {
       expiresAt,
     });
     const expiredToken = await appTester(generateApiKeyToken, generateTokenBundle);
-    const bundleWithExpiredApiKey = {
-      authData: { apiKey: expiredToken },
-    };
+    const bundleWithExpiredApiKey = getBundle({})
+    bundleWithExpiredApiKey.authData.apiKey = expiredToken
 
     try {
       await appTester(App.authentication.test, bundleWithExpiredApiKey);
     } catch (error: any) {
-      expect(error.message).toContain('UNAUTHENTICATED');
+      expect(error.message).toContain('Unauthorized');
       return;
     }
     throw new Error('appTester should have thrown');
