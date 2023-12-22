@@ -3,6 +3,7 @@ import requestDb, { requestSchema } from "../utils/requestDb";
 import handleQueryParams from "../utils/handleQueryParams";
 import { capitalize } from "../utils/capitalize";
 import { computeInputFields } from "../utils/computeInputFields";
+import { findObjectNamesSingularKey } from "../triggers/find_object_names_singular";
 
 const recordInputFields = async (z: ZObject, bundle: Bundle) => {
   const schema = await requestSchema(z, bundle)
@@ -41,7 +42,7 @@ export default {
         key: 'nameSingular',
         required: true,
         label: 'Record Name',
-        dynamic: 'find_objects.nameSingular',
+        dynamic: `${findObjectNamesSingularKey}.nameSingular`,
         altersDynamicFields: true,
       },
       recordInputFields

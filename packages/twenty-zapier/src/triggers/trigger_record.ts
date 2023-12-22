@@ -1,6 +1,7 @@
 import { Bundle, ZObject } from 'zapier-platform-core';
 import requestDb, { requestDbViaRestApi } from '../utils/requestDb';
 import handleQueryParams from '../utils/handleQueryParams';
+import { findObjectNamesPluralKey } from "../triggers/find_object_names_plural";
 
 const performSubscribe = async (z: ZObject, bundle: Bundle) => {
   const data = { targetUrl: bundle.targetUrl, operation: bundle.inputData.namePlural };
@@ -42,7 +43,7 @@ export default {
   noun: 'Record',
   display: {
     label: 'Record Trigger',
-    description: 'Triggered when a Record is created, updated or deleted.',
+    description: 'Triggers when a Record is created, updated or deleted.',
   },
   operation: {
     inputFields: [
@@ -50,7 +51,7 @@ export default {
         key: 'namePlural',
         required: true,
         label: 'Record Name',
-        dynamic: `${triggerRecordKey}.namePlural`,
+        dynamic: `${findObjectNamesPluralKey}.namePlural`,
         altersDynamicFields: true,
       },
     ],
