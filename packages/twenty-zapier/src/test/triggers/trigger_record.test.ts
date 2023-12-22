@@ -5,7 +5,7 @@ import requestDb from '../../utils/requestDb';
 import { triggerRecordKey } from "../../triggers/trigger_record";
 const appTester = createAppTester(App);
 
-describe('triggers.company', () => {
+describe('triggers.trigger_record', () => {
   test('should succeed to subscribe', async () => {
     const bundle = getBundle({});
     bundle.inputData.namePlural = 'companies'

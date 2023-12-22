@@ -5,7 +5,7 @@ import { findObjectNamesSingularKey } from "../../triggers/find_object_names_sin
 tools.env.inject();
 
 const appTester = createAppTester(App);
-describe('triggers.find_objects', () => {
+describe('triggers.find_object_names_singular', () => {
   test('should run', async () => {
     const bundle = getBundle({});
     const result = await appTester(
