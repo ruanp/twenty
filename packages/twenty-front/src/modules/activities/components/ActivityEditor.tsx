@@ -82,7 +82,6 @@ export const ActivityEditor = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const { updateOneRecord: updateOneActivity } = useUpdateOneRecord<Activity>({
     objectNameSingular: 'activity',
-    refetchFindManyQuery: true,
   });
 
   const { FieldContextProvider: DueAtFieldContextProvider } = useFieldContext({
@@ -90,7 +89,6 @@ export const ActivityEditor = ({
     objectRecordId: activity.id,
     fieldMetadataName: 'dueAt',
     fieldPosition: 0,
-    forceRefetch: true,
   });
 
   const { FieldContextProvider: AssigneeFieldContextProvider } =
@@ -99,14 +97,13 @@ export const ActivityEditor = ({
       objectRecordId: activity.id,
       fieldMetadataName: 'assignee',
       fieldPosition: 1,
-      forceRefetch: true,
     });
 
   const updateTitle = useCallback(
     (newTitle: string) => {
       updateOneActivity?.({
         idToUpdate: activity.id,
-        input: {
+        updateOneRecordInput: {
           title: newTitle ?? '',
         },
       });
@@ -117,10 +114,9 @@ export const ActivityEditor = ({
     (value: boolean) => {
       updateOneActivity?.({
         idToUpdate: activity.id,
-        input: {
+        updateOneRecordInput: {
           completedAt: value ? new Date().toISOString() : null,
         },
-        forceRefetch: true,
       });
     },
     [activity.id, updateOneActivity],

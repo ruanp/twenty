@@ -28,7 +28,6 @@ export const ActivityBodyEditor = ({
   const [body, setBody] = useState<string | null>(null);
   const { updateOneRecord } = useUpdateOneRecord({
     objectNameSingular: 'activity',
-    refetchFindManyQuery: true,
   });
 
   useEffect(() => {
@@ -42,7 +41,7 @@ export const ActivityBodyEditor = ({
       setBody(activityBody);
       updateOneRecord?.({
         idToUpdate: activity.id,
-        input: {
+        updateOneRecordInput: {
           body: activityBody,
         },
       });
