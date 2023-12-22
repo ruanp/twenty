@@ -19,11 +19,11 @@ describe('triggers.company', () => {
         requestDb(
           z,
           bundle,
-          `query webhook {webhook(filter: {id: {eq: "${result.id}"}}){id operation}}`,
+          `query webhook {webhooks(filter: {id: {eq: "${result.id}"}}){edges {node {id operation}}}}`,
         ),
       bundle,
     );
-    expect(checkDbResult.data.webhook.operation).toEqual(
+    expect(checkDbResult.data.webhooks.edges[0].node.operation).toEqual(
       'company',
     );
   });
@@ -47,11 +47,11 @@ describe('triggers.company', () => {
         requestDb(
           z,
           bundle,
-          `query webhook {webhook(filter: {id: {eq: "${result.id}"}}){id}}`,
+          `query webhook {webhooks(filter: {id: {eq: "${result.id}"}}){edges {node {id operation}}}}`,
         ),
       bundle,
     );
-    expect(checkDbResult.data.webhook).toEqual(null);
+    expect(checkDbResult.data.webhooks.edges.length).toEqual(0);
   });
   test('should load company from webhook', async () => {
     const bundle = {

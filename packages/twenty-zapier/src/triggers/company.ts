@@ -46,8 +46,11 @@ const performList = async (z: ZObject, bundle: Bundle) => {
   );
   return results.data.companies.edges;
 };
+
+export const companyKey = 'company'
+
 export default {
-  key: 'company',
+  key: companyKey,
   noun: 'Company',
   display: {
     label: 'New Company',
