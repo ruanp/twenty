@@ -3,7 +3,7 @@ import findObjectNamesPlural, { findObjectNamesPluralKey } from "./triggers/find
 const { version } = require('../package.json');
 import { version as platformVersion } from 'zapier-platform-core';
 import createRecord, { createRecordKey } from './creates/create_record';
-import findObjects, { findObjectKey } from './triggers/find_objects'
+import findObjectNamesSingular, { findObjectNamesSingularKey } from './triggers/find_object_names_singular'
 import triggerRecord, {triggerRecordKey} from './triggers/trigger_record';
 import authentication from './authentication';
 import 'dotenv/config';
@@ -13,7 +13,7 @@ export default {
   platformVersion,
   authentication: authentication,
   triggers: {
-    [findObjectKey]: findObjects,
+    [findObjectNamesSingularKey]: findObjectNamesSingular,
     [findObjectNamesPluralKey]: findObjectNamesPlural,
     [triggerRecordKey]: triggerRecord,
   },

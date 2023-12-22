@@ -8,7 +8,7 @@ const objectListRequest = async (z: ZObject, bundle: Bundle) => {
   })
 }
 
-export const findObjectKey = 'find_objects'
+export const findObjectNamesSingularKey = 'find_object_names_singular'
 
 export default {
   display: {
@@ -16,7 +16,7 @@ export default {
     label: 'Find objects',
     hidden: true,
   },
-  key: findObjectKey,
+  key: findObjectNamesSingularKey,
   noun: 'Object',
   operation: {
     perform: objectListRequest,
