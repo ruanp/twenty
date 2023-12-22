@@ -38,7 +38,7 @@ export default {
       {
         key: 'nameSingular',
         required: true,
-        label: 'Name of the Record to create',
+        label: 'Record Name',
         dynamic: 'find_objects.nameSingular',
         altersDynamicFields: true,
       },

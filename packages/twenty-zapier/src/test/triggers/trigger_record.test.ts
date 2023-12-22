@@ -2,14 +2,16 @@ import { Bundle, createAppTester, ZObject } from 'zapier-platform-core';
 import App from '../../index';
 import getBundle from '../../utils/getBundle';
 import requestDb from '../../utils/requestDb';
+import { triggerRecordKey } from "../../triggers/trigger_record";
 const appTester = createAppTester(App);
 
 describe('triggers.company', () => {
   test('should succeed to subscribe', async () => {
     const bundle = getBundle({});
+    bundle.inputData.namePlural = 'companies'
     bundle.targetUrl = 'https://test.com';
     const result = await appTester(
-      App.triggers.company.operation.performSubscribe,
+      App.triggers[triggerRecordKey].operation.performSubscribe,
       bundle,
     );
     expect(result).toBeDefined();
@@ -24,20 +26,21 @@ describe('triggers.company', () => {
       bundle,
     );
     expect(checkDbResult.data.webhooks.edges[0].node.operation).toEqual(
-      'company',
+      'companies',
     );
   });
   test('should succeed to unsubscribe', async () => {
     const bundle = getBundle({});
+    bundle.inputData.namePlural = 'companies'
     bundle.targetUrl = 'https://test.com';
     const result = await appTester(
-      App.triggers.company.operation.performSubscribe,
+      App.triggers[triggerRecordKey].operation.performSubscribe,
       bundle,
     );
     const unsubscribeBundle = getBundle({});
     unsubscribeBundle.subscribeData = { id: result.id };
     const unsubscribeResult = await appTester(
-      App.triggers.company.operation.performUnsubscribe,
+      App.triggers[triggerRecordKey].operation.performUnsubscribe,
       unsubscribeBundle,
     );
     expect(unsubscribeResult).toBeDefined();
@@ -69,7 +72,7 @@ describe('triggers.company', () => {
       },
     };
     const results = await appTester(
-      App.triggers.company.operation.perform,
+      App.triggers[triggerRecordKey].operation.perform,
       bundle,
     );
     expect(results.length).toEqual(1);
@@ -78,12 +81,13 @@ describe('triggers.company', () => {
   });
   it('should load companies from list', async () => {
     const bundle = getBundle({});
+    bundle.inputData.namePlural = 'companies'
     const results = await appTester(
-      App.triggers.company.operation.performList,
+      App.triggers[triggerRecordKey].operation.performList,
       bundle,
     );
     expect(results.length).toBeGreaterThan(1);
     const firstCompany = results[0];
-    expect(firstCompany.node.id).toBeDefined();
+    expect(firstCompany).toBeDefined();
   });
 });

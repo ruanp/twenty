@@ -1,9 +1,9 @@
 import { Bundle, ZObject } from 'zapier-platform-core';
-import requestDb from '../utils/requestDb';
+import requestDb, { requestDbViaRestApi } from '../utils/requestDb';
 import handleQueryParams from '../utils/handleQueryParams';
 
 const performSubscribe = async (z: ZObject, bundle: Bundle) => {
-  const data = { targetUrl: bundle.targetUrl, operation: 'company' };
+  const data = { targetUrl: bundle.targetUrl, operation: bundle.inputData.namePlural };
   const result = await requestDb(
     z,
     bundle,
@@ -28,36 +28,32 @@ const perform = (z: ZObject, bundle: Bundle) => {
   return [bundle.cleanedRequest];
 };
 const performList = async (z: ZObject, bundle: Bundle) => {
-  const results = await requestDb(
+  return await requestDbViaRestApi(
     z,
     bundle,
-    `query company {companies {edges {node {
-      id
-      name
-      domainName
-      createdAt
-      address
-      employees
-      linkedinLink{label url}
-      xLink{label url}
-      annualRecurringRevenue{amountMicros currencyCode}
-      idealCustomerProfile
-    }}}}`,
+    bundle.inputData.namePlural
   );
-  return results.data.companies.edges;
 };
 
-export const companyKey = 'company'
+export const triggerRecordKey = 'trigger_record'
 
 export default {
-  key: companyKey,
-  noun: 'Company',
+  key: triggerRecordKey,
+  noun: 'Record',
   display: {
-    label: 'New Company',
-    description: 'Triggers when a new company is created.',
+    label: 'Record Trigger',
+    description: 'Triggered when a Record is created, updated or deleted.',
   },
   operation: {
-    inputFields: [],
+    inputFields: [
+      {
+        key: 'namePlural',
+        required: true,
+        label: 'Record Name',
+        dynamic: 'find_object_names_plural.namePlural',
+        altersDynamicFields: true,
+      },
+    ],
     type: 'hook',
     performSubscribe,
     performUnsubscribe,
