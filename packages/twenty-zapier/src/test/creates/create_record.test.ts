@@ -2,10 +2,11 @@ import App from '../../index';
 import getBundle from "../../utils/getBundle";
 import { Bundle, createAppTester, tools, ZObject } from "zapier-platform-core";
 import requestDb from "../../utils/requestDb";
+import { createRecordKey } from "../../creates/create_record";
 const appTester = createAppTester(App);
 tools.env.inject();
 
-describe('creates.create_record', () => {
+describe('creates.[createRecordKey]', () => {
   test('should run to create a Company Record', async () => {
     const bundle = getBundle({
       nameSingular: 'Company',
@@ -19,7 +20,7 @@ describe('creates.create_record', () => {
       employees: 25,
     });
     const result = await appTester(
-      App.creates.create_record.operation.perform,
+      App.creates[createRecordKey].operation.perform,
       bundle,
     );
     expect(result).toBeDefined();
@@ -46,7 +47,7 @@ describe('creates.create_record', () => {
       city: 'Paris',
     });
     const result = await appTester(
-      App.creates.create_record.operation.perform,
+      App.creates[createRecordKey].operation.perform,
       bundle,
     );
     expect(result).toBeDefined();

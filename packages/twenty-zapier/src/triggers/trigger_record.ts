@@ -50,7 +50,7 @@ export default {
         key: 'namePlural',
         required: true,
         label: 'Record Name',
-        dynamic: 'find_object_names_plural.namePlural',
+        dynamic: `${triggerRecordKey}.namePlural`,
         altersDynamicFields: true,
       },
     ],

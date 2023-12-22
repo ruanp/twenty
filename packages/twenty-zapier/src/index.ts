@@ -2,7 +2,7 @@ import findObjectNamesPlural, { findObjectNamesPluralKey } from "./triggers/find
 
 const { version } = require('../package.json');
 import { version as platformVersion } from 'zapier-platform-core';
-import createRecord from './creates/create_record';
+import createRecord, { createRecordKey } from './creates/create_record';
 import findObjects, { findObjectKey } from './triggers/find_objects'
 import triggerRecord, {triggerRecordKey} from './triggers/trigger_record';
 import authentication from './authentication';
@@ -18,6 +18,6 @@ export default {
     [triggerRecordKey]: triggerRecord,
   },
   creates: {
-    [createRecord.key]: createRecord,
+    [createRecordKey]: createRecord,
   },
 };

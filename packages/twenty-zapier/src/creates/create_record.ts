@@ -25,13 +25,15 @@ const perform = async (z: ZObject, bundle: Bundle) => {
   return await requestDb(z, bundle, query);
 };
 
+export const createRecordKey = 'create_record'
+
 export default {
   display: {
     description: 'Creates a new Record in Twenty',
     hidden: false,
     label: 'Create New Record',
   },
-  key: 'create_record',
+  key: createRecordKey,
   noun: 'Record',
   operation: {
     inputFields: [
