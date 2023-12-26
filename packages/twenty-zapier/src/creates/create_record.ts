@@ -47,9 +47,6 @@ export default {
       },
       recordInputFields
     ],
-    sample: {
-      id: '179ed459-79cf-41d9-ab85-96397fa8e936',
-    },
     perform
   },
 }
