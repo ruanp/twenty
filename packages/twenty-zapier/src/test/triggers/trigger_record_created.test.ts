@@ -2,7 +2,7 @@ import { Bundle, createAppTester, ZObject } from 'zapier-platform-core';
 import App from '../../index';
 import getBundle from '../../utils/getBundle';
 import requestDb from '../../utils/requestDb';
-import { triggerRecordKey } from "../../triggers/trigger_record";
+import { triggerRecordCreatedKey } from "../../triggers/trigger_record_created";
 const appTester = createAppTester(App);
 
 describe('triggers.trigger_record', () => {
@@ -11,7 +11,7 @@ describe('triggers.trigger_record', () => {
     bundle.inputData.namePlural = 'companies'
     bundle.targetUrl = 'https://test.com';
     const result = await appTester(
-      App.triggers[triggerRecordKey].operation.performSubscribe,
+      App.triggers[triggerRecordCreatedKey].operation.performSubscribe,
       bundle,
     );
     expect(result).toBeDefined();
@@ -34,13 +34,13 @@ describe('triggers.trigger_record', () => {
     bundle.inputData.namePlural = 'companies'
     bundle.targetUrl = 'https://test.com';
     const result = await appTester(
-      App.triggers[triggerRecordKey].operation.performSubscribe,
+      App.triggers[triggerRecordCreatedKey].operation.performSubscribe,
       bundle,
     );
     const unsubscribeBundle = getBundle({});
     unsubscribeBundle.subscribeData = { id: result.id };
     const unsubscribeResult = await appTester(
-      App.triggers[triggerRecordKey].operation.performUnsubscribe,
+      App.triggers[triggerRecordCreatedKey].operation.performUnsubscribe,
       unsubscribeBundle,
     );
     expect(unsubscribeResult).toBeDefined();
@@ -72,7 +72,7 @@ describe('triggers.trigger_record', () => {
       },
     };
     const results = await appTester(
-      App.triggers[triggerRecordKey].operation.perform,
+      App.triggers[triggerRecordCreatedKey].operation.perform,
       bundle,
     );
     expect(results.length).toEqual(1);
@@ -83,7 +83,7 @@ describe('triggers.trigger_record', () => {
     const bundle = getBundle({});
     bundle.inputData.namePlural = 'companies'
     const results = await appTester(
-      App.triggers[triggerRecordKey].operation.performList,
+      App.triggers[triggerRecordCreatedKey].operation.performList,
       bundle,
     );
     expect(results.length).toBeGreaterThan(1);

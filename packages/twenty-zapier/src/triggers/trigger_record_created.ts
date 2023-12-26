@@ -36,14 +36,14 @@ const performList = async (z: ZObject, bundle: Bundle) => {
   );
 };
 
-export const triggerRecordKey = 'trigger_record'
+export const triggerRecordCreatedKey = 'trigger_record_created'
 
 export default {
-  key: triggerRecordKey,
+  key: triggerRecordCreatedKey,
   noun: 'Record',
   display: {
-    label: 'Record Trigger',
-    description: 'Triggers when a Record is created, updated or deleted.',
+    label: 'Record Trigger Created',
+    description: 'Triggers when a Record is created.',
   },
   operation: {
     inputFields: [
