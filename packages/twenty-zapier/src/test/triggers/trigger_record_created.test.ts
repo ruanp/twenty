@@ -26,7 +26,7 @@ describe('triggers.trigger_record', () => {
       bundle,
     );
     expect(checkDbResult.data.webhooks.edges[0].node.operation).toEqual(
-      'companies',
+      'create.companies',
     );
   });
   test('should succeed to unsubscribe', async () => {

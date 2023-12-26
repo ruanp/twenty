@@ -4,7 +4,7 @@ import handleQueryParams from '../utils/handleQueryParams';
 import { findObjectNamesPluralKey } from "../triggers/find_object_names_plural";
 
 const performSubscribe = async (z: ZObject, bundle: Bundle) => {
-  const data = { targetUrl: bundle.targetUrl, operation: bundle.inputData.namePlural };
+  const data = { targetUrl: bundle.targetUrl, operation: `create.${bundle.inputData.namePlural}` };
   const result = await requestDb(
     z,
     bundle,
