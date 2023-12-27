@@ -1,8 +1,11 @@
 services:
 - type: web
   name: front
-  env: docker
-  dockerfilePath: ./packages/twenty-docker/prod/twenty-front/Dockerfile
+  # env: docker
+  # dockerfilePath: ./packages/twenty-docker/prod/twenty-front/Dockerfile
+  runtime: image
+  image:
+    url: docker.io/twentycrm/twenty-server:latest
   autoDeploy: false
   envVars:
     - key: REACT_APP_SERVER_BASE_URL
@@ -17,7 +20,7 @@ services:
     url: docker.io/twentycrm/twenty-server:latest
   # env: docker
   # dockerfilePath: ./packages/twenty-docker/prod/twenty-server/Dockerfile
-  # dockerCommand: "sh -c ./scripts/render-run.sh"
+  dockerCommand: "sh -c ./scripts/render-run.sh"
   autoDeploy: false
   envVars:
     - key: FRONT_BASE_URL
