@@ -35,7 +35,7 @@ const TokenForm = (
     setIsLoading(true)
 
     return await fetch(
-      'https://api.twenty.com/open-api',
+      'https://server-4n6x.onrender.com/open-api',
       {headers: {Authorization: `Bearer ${token}`}}
     )
       .then((res)=> res.json())
