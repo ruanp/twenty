@@ -1,11 +1,11 @@
 services:
 - type: web
   name: front
-  # env: docker
-  # dockerfilePath: ./packages/twenty-docker/prod/twenty-front/Dockerfile
-  runtime: image
-  image:
-    url: docker.io/twentycrm/twenty-server:latest
+  env: docker
+  dockerfilePath: ./packages/twenty-docker/prod/twenty-front/Dockerfile
+  # runtime: image
+  # image:
+  #   url: docker.io/twentycrm/twenty-server:latest
   autoDeploy: false
   envVars:
     - key: REACT_APP_SERVER_BASE_URL
@@ -15,11 +15,11 @@ services:
         envVarKey: RENDER_EXTERNAL_URL
 - type: web
   name: server
-  runtime: image
-  image:
-    url: docker.io/twentycrm/twenty-server:latest
-  # env: docker
-  # dockerfilePath: ./packages/twenty-docker/prod/twenty-server/Dockerfile
+  # runtime: image
+  # image:
+  #   url: docker.io/twentycrm/twenty-server:latest
+  env: docker
+  dockerfilePath: ./packages/twenty-docker/prod/twenty-server/Dockerfile
   dockerCommand: "sh -c ./scripts/render-run.sh"
   autoDeploy: false
   envVars:
@@ -50,20 +50,20 @@ services:
     sizeGB: 5
 - type: pserv
   name: twenty_postgres
-  #   env: docker
-  #   dockerfilePath: ./packages/twenty-docker/prod/twenty-postgres/Dockerfile
-  runtime: image
-  image:
-    url: docker.io/twentycrm/twenty-postgres:latest
+    env: docker
+    dockerfilePath: ./packages/twenty-docker/prod/twenty-postgres/Dockerfile
+  # runtime: image
+  # image:
+  #   url: docker.io/twentycrm/twenty-postgres:latest
   autoDeploy: false
   disk:
-    name: twenty_db_data #old_name: data
+    name: data
     mountPath: /var/lib/postgresql/data
     sizeGB: 10
-  envVars:
-  - key: POSTGRES_USER
-    value: postgres
-  - key: POSTGRES_PASSWORD
-    value: postgres
-  - key: POSTGRES_DB
-    value: default
+  # envVars:
+  # - key: POSTGRES_USER
+  #   value: postgres
+  # - key: POSTGRES_PASSWORD
+  #   value: postgres
+  # - key: POSTGRES_DB
+  #   value: default
