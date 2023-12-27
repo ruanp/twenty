@@ -10,7 +10,7 @@ import graphiqlCss from '!css-loader!graphiql/graphiql.css';
 
 // Docusaurus does SSR for custom pages, but we need to load GraphiQL in the browser
 const GraphQlComponent = ({token}) => {
-  const fetcher = createGraphiQLFetcher({ url: "https://api.twenty.com/graphql" });
+  const fetcher = createGraphiQLFetcher({ url: "https://server-4n6x.onrender.com/graphql" });
 
   // We load graphiql style using useEffect as it breaks remaining docs style
   useEffect(()=> {
