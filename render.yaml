@@ -50,8 +50,8 @@ services:
     sizeGB: 5
 - type: pserv
   name: twenty_postgres
-    env: docker
-    dockerfilePath: ./packages/twenty-docker/prod/twenty-postgres/Dockerfile
+  env: docker
+  dockerfilePath: ./packages/twenty-docker/prod/twenty-postgres/Dockerfile
   # runtime: image
   # image:
   #   url: docker.io/twentycrm/twenty-postgres:latest
