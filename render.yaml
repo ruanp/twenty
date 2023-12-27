@@ -12,9 +12,12 @@ services:
         envVarKey: RENDER_EXTERNAL_URL
 - type: web
   name: server
-  env: docker
-  dockerfilePath: ./packages/twenty-docker/prod/twenty-server/Dockerfile
-  dockerCommand: "sh -c ./scripts/render-run.sh"
+  runtime: image
+  image:
+    url: docker.io/twentycrm/twenty-server:latest
+  # env: docker
+  # dockerfilePath: ./packages/twenty-docker/prod/twenty-server/Dockerfile
+  # dockerCommand: "sh -c ./scripts/render-run.sh"
   autoDeploy: false
   envVars:
     - key: FRONT_BASE_URL
@@ -28,42 +31,36 @@ services:
       generateValue: true
     - key: REFRESH_TOKEN_SECRET
       generateValue: true
-    # - key: PG_DATABASE_HOST
-    #   fromService:
-    #     name: twenty_postgres
-    #     type: pserv
-    #     property: host
-    # - key: PG_DATABASE_PORT
-    #   fromService:
-    #     name: twenty_postgres
-    #     type: pserv
-    #     property: port
     - key: PG_DATABASE_HOST
-      fromDatabase:
+      fromService:
         name: twenty_postgres
+        type: pserv
         property: host
     - key: PG_DATABASE_PORT
-      fromDatabase:
+      fromService:
         name: twenty_postgres
+        type: pserv
         property: port
   disk:
     name: twenty-disk
     mountPath: /.local-storage
     sizeGB: 5
-# - type: pserv
-#   name: twenty_postgres
-#   env: docker
-#   dockerfilePath: ./packages/twenty-docker/prod/twenty-postgres/Dockerfile
-#   autoDeploy: false
-#   disk:
-#     name: data
-#     mountPath: /var/lib/postgresql/data
-#     sizeGB: 10
-#   envVars:
-#   - key: POSTGRES_USER
-#     value: twenty
-#   - key: POSTGRES_PASSWORD
-#     value: twenty
-#   - key: POSTGRES_DB
-#     value: default
-  
+- type: pserv
+  name: twenty_postgres
+  #   env: docker
+  #   dockerfilePath: ./packages/twenty-docker/prod/twenty-postgres/Dockerfile
+  runtime: image
+  image:
+    url: docker.io/twentycrm/twenty-postgres:latest
+  autoDeploy: false
+  disk:
+    name: twenty_db_data #old_name: data
+    mountPath: /var/lib/postgresql/data
+    sizeGB: 10
+  envVars:
+  - key: POSTGRES_USER
+    value: postgres
+  - key: POSTGRES_PASSWORD
+    value: postgres
+  - key: POSTGRES_DB
+    value: default
